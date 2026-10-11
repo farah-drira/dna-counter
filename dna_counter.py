@@ -1,4 +1,10 @@
-sequence = "ATGCGTACGTTAGC"
+sequence = ""
+
+with open("example.fasta") as file:
+    for line in file:
+        line = line.strip()
+        if not line.startswith(">"):
+            sequence += line
 
 for base in "ATGC":
     print(base, ":", sequence.count(base))
